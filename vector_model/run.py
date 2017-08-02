@@ -1,6 +1,7 @@
 import gensim.models as gsm
 import sklearn as sk
 import pickle 
+import numpy as np
 
 # path to pretrained emoji's and word vectors.
 PATH_emoji2vec = "/home/susuresh/emoji2vec/pre-trained/emoji2vec.bin"
