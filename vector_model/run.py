@@ -32,10 +32,11 @@ def getEmoji(sentence):
 sentences = ["9 perfect last minute summer trip ideas",
 			"Shop shoes and clothes at PUMA with your reward points & get 50% value back",
 			"Save up to 15% on dining with Citi cards at these new premium restaurants"]
-pel = []
-for sentence in sentences:
-	print(sentence)
-	pel.append(getEmoji(sentence))
 
 with open("pred_emojis.txt", "w",encoding='utf-8') as output:
-    output.write(str(pel))
+	for sentence in sentences:
+		print(sentence)
+		output.write(str(sentence))
+		output.write(str(getEmoji(sentence)))    
+		output.write(str("------"))
+		print("-----")
