@@ -28,15 +28,26 @@ def getEmoji(sentence):
 		pred_emoji_list.append(e2v.similar_by_vector(wvec,topn=2))
 
 	return pred_emoji_list
+def getEmojiVectorSum(sentence):
+	sentence_words = sentence.split(" ")
+	vector_sum = np.zeros(300)
+	for word in sentence_words:
+		if word in w2v.vocab:
+			vector_sum = vector_sum + w2v[word]
+
+	pred_emoji_list = []
+	
+	pred_emoji_list.append(e2v.similar_by_vector(vector_sum,topn=5))
+	return pred_emoji_list
 
 sentences = ["9 perfect last minute summer trip ideas",
 			"Shop shoes and clothes at PUMA with your reward points & get 50% value back",
 			"Save up to 15% on dining with Citi cards at these new premium restaurants"]
 
-with open("pred_emojis.txt", "w",encoding='utf-8') as output:
+with open("pred_emojis_vector_sum.txt", "w",encoding='utf-8') as output:
 	for sentence in sentences:
 		print(sentence)
 		output.write(str(sentence))
-		output.write(str(getEmoji(sentence)))    
+		output.write(str(getEmojiVectorSum(sentence)))    
 		output.write(str("------"))
 		print("-----")
