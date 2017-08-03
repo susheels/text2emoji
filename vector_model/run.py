@@ -43,12 +43,13 @@ def getEmojiVectorSum(sentence):
 
 sentences = ["9 perfect last minute summer trip ideas",
 			"Shop shoes and clothes at PUMA with your reward points & get 50% value back",
-			"Save up to 15% on dining with Citi cards at these new premium restaurants"]
+			"Save up to 15% on dining with Citi cards at these new premium restaurants",
+			"Traveling with Carnival Cruise Lines Just Got Better"]
 
 with open("pred_emojis_vector_sum.txt", "w",encoding='utf-8') as output:
 	for sentence in sentences:
 		print(sentence)
 		output.write(str(sentence))
-		output.write(str(getEmojiVectorSum(sentence)))    
+		output.write(str(getEmojiVectorSum(sentence)))
 		output.write(str("------"))
 		print("-----")
