@@ -44,7 +44,8 @@ def getEmojiVectorSum(sentence):
 sentences = ["9 perfect last minute summer trip ideas",
 			"Shop shoes and clothes at PUMA with your reward points & get 50% value back",
 			"Save up to 15% on dining with Citi cards at these new premium restaurants",
-			"Traveling with Carnival Cruise Lines Just Got Better"]
+			"Traveling with Carnival Cruise Lines Just Got Better",
+			"German Armed Forces Upsizes Its Use of Adobe Acrobat"]
 
 with open("pred_emojis_vector_sum.txt", "w",encoding='utf-8') as output:
 	for sentence in sentences:
